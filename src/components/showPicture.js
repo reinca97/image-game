@@ -7,18 +7,18 @@ const ShowPicture = props => {
     const [incorrectArr, setIncorrectArr] = useState([]);
     const [answerStr, setAnswerStr] = useState("");
 
-    const maxIndex = 8;
+    const maxIndex = 9;
 
     useEffect(() => {
         setCurrentImg(props.img[0]);
-
     }, [props.img]);
 
     const showNextPic = correct => {
+        console.log(currentIndex);
         setAnswerStr(currentImg.title);
         const nextIndex = currentIndex + 1;
 
-        if(maxIndex===nextIndex){
+        if(maxIndex<=nextIndex){
             props.onSetResult(
                 props.selectedFolder,
                 {
@@ -27,15 +27,15 @@ const ShowPicture = props => {
                     incorrect:incorrectArr
                 }
             );
-        }
-
-        if(maxIndex<nextIndex){
             return;
         }
 
-        correct? (setCorrectArr([...correctArr,currentImg.title])):(
-            setIncorrectArr([...incorrectArr,currentImg.title])
-        );
+        if(currentIndex!==0){
+            correct? (setCorrectArr([...correctArr,currentImg.title])):(
+                setIncorrectArr([...incorrectArr,currentImg.title])
+            );
+        }
+
 
         window.setTimeout(()=>{
             setCurrentImg(props.img[nextIndex]);

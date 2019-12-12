@@ -42,7 +42,7 @@ const list5 = [
     },
     {
         src:start,
-        title:""
+        title:"종료"
     },
 ];
 
