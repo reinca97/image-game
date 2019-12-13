@@ -4,7 +4,7 @@ import Stopwatch from "./stopwatch";
 const ShowPicture = props => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentImg, setCurrentImg] = useState(null);
-    const maxIndex = 8;
+    const maxIndex = 11;
 
     useEffect(() => {
         setCurrentImg(props.data.src[0]);

@@ -6,6 +6,9 @@ import e from "./인주.jpg";
 import f from "./타노스.jpg";
 import g from "./트롬본.jpg";
 import start from "./start6.jpg";
+import h from "./스누피.png";
+import i from "./조성진.jpg";
+import j from "./핫도그.png";
 
 const list6 = [
     {
@@ -39,6 +42,18 @@ const list6 = [
     {
         src: g,
         title: "트롬본"
+    },
+    {
+        src:h,
+        title:"스누피"
+    },
+    {
+        src:i,
+        title:"조성진"
+    },
+    {
+        src:j,
+        title:"핫도그"
     },
     {
         src:start,

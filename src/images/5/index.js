@@ -6,6 +6,9 @@ import e from "./이정필.jpg";
 import f from "./지휘봉.jpg";
 import g from "./체리.png";
 import start from "./start5.jpg";
+import h from "./먹태.jpg";
+import i from "./메니큐어.jpeg";
+import j from "./백종원.jpg";
 
 const list5 = [
     {
@@ -39,6 +42,18 @@ const list5 = [
     {
         src: g,
         title: "체리"
+    },
+    {
+        src:h,
+        title:"먹태"
+    },
+    {
+        src:i,
+        title:"매니큐어"
+    },
+    {
+        src:j,
+        title:"백종원"
     },
     {
         src:start,

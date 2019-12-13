@@ -57,8 +57,8 @@ const App = () => {
     return (
         <div className="App">
             <div className="direction">
-                <h1>이름 맞추기 게임</h1>
-                <h2>사진을 보고 빠르게 해당 물건/인물의 이름을 말하세요!</h2>
+                <h1>💁이름 맞추기 게임</h1>
+                <h2>사진을 보고 👀빠르게 해당 물건 / 인물의 이름을 말하세요!🗣</h2>
             </div>
 
             {selectedData === null ? (
@@ -75,7 +75,7 @@ const App = () => {
                                 {
                                     data.result.timeStamp &&
                                     <div>
-                                        {Number(String(data.result.timeStamp))*0.001}초
+                                        {(data.result.timeStamp*0.001).toFixed(3)}초
                                     </div>
                                 }
 

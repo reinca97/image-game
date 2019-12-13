@@ -5,6 +5,9 @@ import d from "./에어팟.png";
 import e from "./츄러스.jpg";
 import f from "./티라노사우르스.jpg";
 import g from "./힐러리한.jpg";
+import h from "./강형욱.jpg";
+import i from "./바순.jpg";
+import j from "./칵테일.png";
 import start from "./start1.jpg";
 
 const list1 = [
@@ -41,9 +44,22 @@ const list1 = [
         title: "힐러리한"
     },
     {
+        src:h,
+        title:"강형욱"
+    },
+    {
+        src:i,
+        title:"바순"
+    },
+    {
+        src:j,
+        title:"칵테일"
+    },
+    {
         src:start,
         title:"종료"
     },
+
 ];
 
 export default list1;

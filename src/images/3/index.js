@@ -5,7 +5,11 @@ import d from "./점16분음표.png";
 import e from "./차이코프스키.jpg";
 import f from "./코뿔소.jpeg";
 import g from "./해파리.jpg";
+import h from "./루돌프.jpeg";
+import i from "./주디.jpeg";
+import j from "./한라봉.jpg";
 import start from "./start3.jpg";
+
 
 const list3 = [
     {
@@ -39,6 +43,18 @@ const list3 = [
     {
         src: g,
         title: "해파리"
+    },
+    {
+        src:h,
+        title:"루돌프"
+    },
+    {
+        src:i,
+        title:"쥬디"
+    },
+    {
+        src:j,
+        title:"한라봉"
     },
     {
         src:start,

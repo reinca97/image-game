@@ -5,7 +5,11 @@ import d from "./손흥민.jpg";
 import e from "./오리발.jpg";
 import f from "./이요르.gif";
 import g from "./이정재.jpeg";
+import h from "./몽키스패너.jpg";
+import i from "./스펀지밥.jpeg";
+import j from "./조용필.jpeg";
 import start from "./start4.jpg";
+
 
 const list4 = [
     {
@@ -39,6 +43,18 @@ const list4 = [
     {
         src: g,
         title: "이정재"
+    },
+    {
+        src:h,
+        title:"몽키스패너"
+    },
+    {
+        src:i,
+        title:"스펀지밥"
+    },
+    {
+        src:j,
+        title:"조용필"
     },
     {
         src:start,

@@ -21,8 +21,12 @@ ul{
 
 ////***********************////
 
-.direction{
+.direction {
     text-align: center;
+    color: #ffffff;
+    padding: 20px 0;
+    margin-bottom:20px;
+    background: linear-gradient(90deg, rgba(12,28,112,1) 0%, rgba(245,68,104,1) 100%);
 }
 
 .select-box{
@@ -39,7 +43,7 @@ ul{
             line-height:100px;
             display: inline-block;
             margin:2%;
-            background-color: #fff900;
+            background-color: #b4ffdb;
             cursor:pointer;
 
             &>div{
@@ -47,11 +51,12 @@ ul{
             }
 
             &:hover{
-                background-color: #fb9f00;
+                background-color: #009f87;
             }
 
             &.done{
                 background-color: #4f4f4f;
+                color:#ffffff;
                 cursor: not-allowed;
             }
         }
@@ -62,7 +67,7 @@ ul{
 .img-box{
     text-align: center;
     img{
-        height: 800px;
+        height: 600px;
 
     }
 }
