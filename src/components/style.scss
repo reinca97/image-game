@@ -33,17 +33,21 @@ ul{
         li{
             width:30%;
             height:200px;
-            font-size: 4em;
+            font-size: 50px;
             border: 2px solid #000000;
             text-align:center;
-            line-height:200px;
+            line-height:100px;
             display: inline-block;
             margin:2%;
-            background-color: #bbbbbb;
+            background-color: #fff900;
             cursor:pointer;
 
+            &>div{
+                font-size:1em;
+            }
+
             &:hover{
-                background-color: #61dafb;
+                background-color: #fb9f00;
             }
 
             &.done{
@@ -91,4 +95,14 @@ ul{
     left:20%;
     transform:translateX(50%);
     background-color:#ffffff;
+}
+
+
+.display-index{
+    text-align: center;
+    font-size: 20px;
+}
+
+.time{
+    font-size:30px;
 }

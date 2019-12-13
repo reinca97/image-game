@@ -1,48 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Stopwatch from "./stopwatch";
 
 const ShowPicture = props => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentImg, setCurrentImg] = useState(null);
-    const [correctArr, setCorrectArr] = useState([]);
-    const [incorrectArr, setIncorrectArr] = useState([]);
-    const [answerStr, setAnswerStr] = useState("");
-
-    const maxIndex = 9;
+    const maxIndex = 8;
 
     useEffect(() => {
-        setCurrentImg(props.img[0]);
-    }, [props.img]);
+        setCurrentImg(props.data.src[0]);
+    }, [props.data]);
 
-    const showNextPic = correct => {
-        console.log(currentIndex);
-        setAnswerStr(currentImg.title);
+    const showNextPic = () => {
         const nextIndex = currentIndex + 1;
+        setCurrentImg(props.data.src[nextIndex]);
+        setCurrentIndex(nextIndex);
+    };
 
-        if(maxIndex<=nextIndex){
-            props.onSetResult(
-                props.selectedFolder,
-                {
-                    isDone:true,
-                    correct:correctArr,
-                    incorrect:incorrectArr
-                }
-            );
-            return;
-        }
-
-        if(currentIndex!==0){
-            correct? (setCorrectArr([...correctArr,currentImg.title])):(
-                setIncorrectArr([...incorrectArr,currentImg.title])
-            );
-        }
-
-
-        window.setTimeout(()=>{
-            setCurrentImg(props.img[nextIndex]);
-            setCurrentIndex(nextIndex);
-            setAnswerStr("");
-        },1000);
-
+    const getResultTime = timeStamp => {
+        props.onSetResult(props.selectedFolder, {
+            isDone: true,
+            timeStamp: timeStamp
+        });
     };
 
     return (
@@ -53,20 +31,17 @@ const ShowPicture = props => {
                 </div>
             )}
 
-            <div className="answer">
-                {answerStr}
-            </div>
+            <div>
+                <div className="display-index">
+                    {currentIndex}/{maxIndex - 1}
+                </div>
 
-            <div className="button-wrapper">
-                <button
-                    className="incorrect"
-                    onClick={() => showNextPic(false)}
-                >
-                    X
-                </button>
-                <button className="correct" onClick={() => showNextPic(true)}>
-                    O
-                </button>
+                <Stopwatch
+                    showNextPic={showNextPic}
+                    currentIndex={currentIndex}
+                    maxIndex={maxIndex}
+                    getResultTime={getResultTime}
+                />
             </div>
         </section>
     );

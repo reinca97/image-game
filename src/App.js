@@ -11,38 +11,38 @@ import ShowPicture from "./components/showPicture";
 const initialDataList = [
     {
         src: list1,
-        result: { isDone: false, correct: [], incorrect: [], time: "" }
+        result: { isDone: false,  timeStamp: "" }
     },
     {
         src: list2,
-        result: { isDone: false, correct: [], incorrect: [], time: "" }
+        result: { isDone: false,  timeStamp: "" }
     },
     {
         src: list3,
-        result: { isDone: false, correct: [], incorrect: [], time: "" }
+        result: { isDone: false,  timeStamp: "" }
     },
     {
         src: list4,
-        result: { isDone: false, correct: [], incorrect: [], time: "" }
+        result: { isDone: false,  timeStamp: "" }
     },
     {
         src: list5,
-        result: { isDone: false, correct: [], incorrect: [], time: "" }
+        result: { isDone: false,  timeStamp: "" }
     },
     {
         src: list6,
-        result: { isDone: false, correct: [], incorrect: [], time: "" }
+        result: { isDone: false,  timeStamp: "" }
     }
 ];
 
 const App = () => {
     const [dataList, setDataList] = useState(initialDataList);
     const [selectedFolder, selectFolder] = useState(null);
-    const [selectedList, selectList] = useState(null);
+    const [selectedData, selectData] = useState(null);
 
     const onSelectData = (data, index) => {
         selectFolder(index);
-        selectList(data.src);
+        selectData(data);
     };
 
     const onSetResult = (index, result) => {
@@ -56,13 +56,12 @@ const App = () => {
 
     return (
         <div className="App">
-            <div onClick={() => selectList(null)}>🐣</div>
             <div className="direction">
                 <h1>이름 맞추기 게임</h1>
                 <h2>사진을 보고 빠르게 해당 물건/인물의 이름을 말하세요!</h2>
             </div>
 
-            {selectedList === null ? (
+            {selectedData === null ? (
                 <div className="select-box">
                     <ul>
                         {dataList.map((data, index) => (
@@ -72,18 +71,27 @@ const App = () => {
                                 onClick={() => onSelectData(data, index)}
                                 className={data.result.isDone ? "done" : ""}
                             >
-                                {index + 1}({data.result.correct.length})
+                               - {index+1}번 -
+                                {
+                                    data.result.timeStamp &&
+                                    <div>
+                                        {Number(String(data.result.timeStamp))*0.001}초
+                                    </div>
+                                }
+
                             </li>
                         ))}
                     </ul>
                 </div>
             ) : (
                 <ShowPicture
-                    img={selectedList}
+                    data={selectedData}
+                    setDataList={setDataList}
                     selectedFolder={selectedFolder}
                     onSetResult={onSetResult}
                 />
             )}
+            <div onClick={() => selectData(null)}>🐣</div>
         </div>
     );
 };
